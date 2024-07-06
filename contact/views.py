@@ -11,5 +11,12 @@ def contact(request):
     return render(request, 'contact/contact.html', context=details)
 
 def showForms(request):
-    fm = ShowFormsData()
+    if request.method == 'POST':
+        fm = ShowFormsData(request.POST)
+        print(fm)
+        print('this is post method')
+        print(fm.cleaned_data)
+    else:
+     fm = ShowFormsData()
+     print('this is get method')
     return render(request, 'contact/forms.html', {'form': fm} )

@@ -6,12 +6,12 @@
     <title>Forms</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="POST" novalidate >{% csrf_token %}
 
         <table>
-            {{form}}
+            {{form.as_p}}
         </table>
-        <input type="button" value="Submit">
+        <input type="Submit" value="Submit">
     </form>
 </body>
 </html>

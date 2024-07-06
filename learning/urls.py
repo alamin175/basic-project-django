@@ -6,4 +6,5 @@ urlpatterns = [
     path('learn/', views.learning),
     path('check/', views.checking),
     path('table/', views.db_table),
+    path('class/', views.Learning.as_view())
 ]
